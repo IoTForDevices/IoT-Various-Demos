@@ -3,7 +3,7 @@
 This demo has been shown at //Build 19. Take a look at the [following video](https://mybuild.techcommunity.microsoft.com/sessions/77054?source=sessions#top-anchor). The demo starts at 24:09.
 
 High level architecture looks like this:
-![ScreenShot](Images\EdgeArchitecture.png)
+![ScreenShot](Images/EdgeArchitecture.png)
 
 
 ## Pre-requisites
@@ -24,22 +24,22 @@ You also need the
 1) Make sure to have an IoT Hub with an Edge device registered. This can be done using [these instructions](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-register-device-vscode).
 1) From inside VS Code, signin to Azure ()
 1) From inside VS Code, select the Edge device that you previously registered. You should see the runtime already being active.
-![ScreenShot](Images\IoTEdge-CS-via-MarketPlace-ListModules.png)
+![ScreenShot](Images/IoTEdge-CS-via-MarketPlace-ListModules.png)
 1) Create a new blank IoT Edge Solution inside VS Code
-![ScreenShot](Images\IoTEdge-CS-via-MarketPlace-NewBlankEdgeSolution.png)
+![ScreenShot](Images/IoTEdge-CS-via-MarketPlace-NewBlankEdgeSolution.png)
 1) Right click the Modules folder and select **Add IoT Edge Module**
 1) In the dropdown, select **Module from Azure Marketplace**
-![ScreenShot](Images\IoTEdge-CS-via-MarketPlace-SelectModule.png)
+![ScreenShot](Images/IoTEdge-CS-via-MarketPlace-SelectModule.png)
 1) Scroll down to find the **Sentiment Analysis Container – Azure Cognitive Services** and Import it
-![ScreenShot](Images\IoTEdge-CS-Select-Sentimental-Analysis-Container.png)
+![ScreenShot](Images/IoTEdge-CS-Select-Sentimental-Analysis-Container.png)
 1) Open the deployment.template.json and find the **SentimentAnalysisContainerAzureCognitiveServices** module
-![ScreenShot](Images\IoTEdge-CS-DeploymentTemplate.png)
+![ScreenShot](Images/IoTEdge-CS-DeploymentTemplate.png)
 1) Enter your AppKey value, which you can find on your Azure Portal
 1) Save the deployment.template.json file
 1) Right-click on the deployment.template.json file and select **Generate IoT Edge Deployment Manifest**
 1) Under the new created **config** section in your solution, right click the **deployment.amd64.json** file and select **Create Deployment for Single Device**
 1) Select the Azure IoT Edge device to which you want to deploy the module and wait until it has been deployed.
-![ScreenShot](Images\IoTEdge-CS-via-MarketPlace-DeployedModule.png)
+![ScreenShot](Images/IoTEdge-CS-via-MarketPlace-DeployedModule.png)
 1) Browse to the edge device to access the container (on port 5000)
 1) Use Swagger to try the service out.   
 
