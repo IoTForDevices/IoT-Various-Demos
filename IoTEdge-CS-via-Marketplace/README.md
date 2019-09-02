@@ -41,6 +41,7 @@ You also need the
 1) Select the Azure IoT Edge device to which you want to deploy the module and wait until it has been deployed.
 ![ScreenShot](Images/IoTEdge-CS-via-MarketPlace-DeployedModule.png)
 1) Browse to the edge device to access the container (on port 5000)
+	NOTE: You might need to create an inbound port rule on your VM's network to allow traffic to port 5000.
 1) Use Swagger to try the service out.   
 
 ## Instructions to remove Azure IoT Edge runtime entirely
