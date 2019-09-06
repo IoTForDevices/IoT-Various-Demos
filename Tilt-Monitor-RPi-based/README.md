@@ -6,5 +6,5 @@ Some background on Anomaly Detection using ASA can be found in [this document](h
 
 ## Pre-requisites
 
-Here you will find detailed instruction to install [Azure IoT Edge on a RP3 running Raspbian Buster](../Generic-prerequisites/Rasbian-Buster-IoTEdge-RP3/README.md).
+Here you will find detailed instruction to install [Azure IoT Edge on a RP3 running Raspbian Buster](../Generic-prerequisites/Raspbian-Buster-IoTEdge-RP3/README.md).
 
