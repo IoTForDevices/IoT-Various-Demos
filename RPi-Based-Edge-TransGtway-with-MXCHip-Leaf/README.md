@@ -8,9 +8,9 @@ Here you will find detailed instruction to install [Azure IoT Edge on a RP3 runn
 
 ## Generate certificates with Linux
 
-A good description on doing this can be found in [this document](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-create-transparent-gateway#generate-certificates-with-linux).[^1]
+A good description on doing this can be found in [this document](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-create-transparent-gateway#generate-certificates-with-linux).
 
-[^1]: For my personal use: on ubuntu-dev-vm-mst01 Azure VM, generated keys can be found in the ~/IoTEdgeCerts folder.
+  NOTE: For my personal use: on ubuntu-dev-vm-mst01 Azure VM, generated keys can be found in the ~/IoTEdgeCerts folder.
 
 To copy the generated certificates from a development machine to the target device, you can use the following commands from a WSL shell:
 ```Bash
