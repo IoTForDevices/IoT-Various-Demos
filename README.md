@@ -9,6 +9,7 @@ A number of different step-by-step demo instructions for Azure IoT based present
 
 [Anomaly Detection with Stream Analytics on the Edge using a Raspberry Pi 3B+](Tilt-Monitor-RPi-based/README.md) demo
 
-[Azure IoT Edge Device as Transparent Gateway with MXChip leaf device connected])(RPi-Based-Edge-TransGtway-with-MXCHip-Leaf/README.md) demo
+[Azure IoT Edge Device as Transparent Gateway with MXChip leaf device connected](RPi-Based-Edge-TransGtway-with-MXCHip-Leaf/README.md) demo
 
+[Custom Vision on Azure IoT Edge](CustomVisionOnEdge/README.md) demo
 

@@ -45,7 +45,7 @@ FROM
 ![ScreenShot](Images/ASAJobInPortal.png)
 
 ### Create the PowerBI Dashboard
-1) Create a Power BI dashboard, showing temp, IsSDAnomaly and IsCPAnomaly over time
+1) Create a Power BI dashboard, showing temp, IsSDAnomaly and IsCPAnomaly over time. Also experiment a bit with showing some of these as live KPIs as well.
 
 ![ScreenShot](Images/PowerBIDashboard.png)
 
