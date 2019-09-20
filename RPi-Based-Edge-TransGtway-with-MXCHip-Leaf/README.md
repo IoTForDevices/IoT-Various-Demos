@@ -12,9 +12,9 @@ A good description on doing this can be found in [this document](https://docs.mi
 
 To copy the generated certificates from a development machine to the target device, you can use the following commands from a WSL shell:
 ```Bash
-    scp <root-folder-for-cert-creation>/certs/iot-edge-device-ca-MyEdgeDeviceCA-full-chain.cert.pem pi@<remote-host>:certs/
-    scp <root-folder-for-cert-creation>/private/iot-edge-device-ca-MyEdgeDeviceCA.key.pem pi@<remote-host>:certs/private/
-    scp <root-folder-for-cert-creation>/certs/azure-iot-test-only.root.ca.cert.pem
+    scp <root-folder-for-cert-creation>/certs/iot-edge-device-ca-MyEdgeDeviceCA-full-chain.cert.pem pi@<remote-host>:<CERTDIR>/certs/
+    scp <root-folder-for-cert-creation>/private/iot-edge-device-ca-MyEdgeDeviceCA.key.pem pi@<remote-host>:<CERTDIR>/private/
+    scp <root-folder-for-cert-creation>/certs/azure-iot-test-only.root.ca.cert.pem pi@<remote-host>:<CERTDIR>/certs
 ```
 
 On the Edge device you now must add the certificates to the certificate section of the IoT Edge security daemon file that can be found here: ```/etc/iotedge/config.yaml```
