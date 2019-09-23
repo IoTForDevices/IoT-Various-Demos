@@ -12,7 +12,7 @@ Have the Azure IoT Edge runtime installed on one of the following:
 - Physical device running Linux - [How to do this](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux)
 - Virtual device running Linux - [How to do this](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-ubuntuvm)
 
-	NOTE: If you install a virtual device from the Marketplace with IoT Edge already enabled, you will be asked to provide a connection string through a script. If the connection string passed is invalid, the IoT Edge runtime will fail. If you have issues, best to do is execute the following on the device:
+	**NOTE**: If you install a virtual device from the Marketplace with IoT Edge already enabled, you will be asked to provide a connection string through a script. If the connection string passed is invalid, the IoT Edge runtime will fail. If you have issues, best to do is execute the following on the device:
 	
 ```
 	sudo iotedge list
@@ -22,8 +22,15 @@ Have the Azure IoT Edge runtime installed on one of the following:
 The latter command will show you if there is something wrong with your connection string.
 You also need to create an inbound security rule to open port 5000 for TCP traffic. 
 
+**NOTE** If you are using an Azure VM that has been powered down, after restarting it might happen that you get errors if you are checking the number of modules in your edge device. If that happens, it is best to restart your container service and the iotedge runtime. This can be done as follows:
+
+```
+sudo systemctl restart docker
+sudo systemctl restart iotedge
+```
+
 ## Step-by-step instructions
-1) Create a new Azure IoT Edge runtime on an Edge Device (virtual or physical).
+1) Create a new Azure IoT Edge runtime on an Edge Device (virtual or physical) or use an existing one.
 
 	**Note:** This step is not necessary if you use the 'Virtual device running Linux' or 'Virtual device running Windows Server' pre-requisites, since they already install the Azure IoT Edge runtime for you.
 1) Start VS Code
@@ -37,6 +44,7 @@ You also need to create an inbound security rule to open port 5000 for TCP traff
 1) In the dropdown, select **Module from Azure Marketplace**
 ![ScreenShot](Images/IoTEdge-CS-via-MarketPlace-SelectModule.png)
 1) Scroll down to find the **Sentiment Analysis Container – Azure Cognitive Services** and Import it
+	**NOTE:** This will only work properly from a local instance of Visual Studio Code. Don't use an instance that has a remote connection to your Edge device, because that will fail showing the Azure Marketplace.
 ![ScreenShot](Images/IoTEdge-CS-Select-Sentimental-Analysis-Container.png)
 1) Open the deployment.template.json and find the **SentimentAnalysisContainerAzureCognitiveServices** module
 ![ScreenShot](Images/IoTEdge-CS-DeploymentTemplate.png)
