@@ -117,9 +117,3 @@ At the same time you will see in the IoT Edge logfiles that it passes those mess
 
 **Possible Issues:** This should all work smoothly (even with a Edge Device and the leaf device both connected only via WiFi). The only critical things are to make sure that both edgeAgent and edgeHub modules are running on the Edge Device and that the GatewayHostName is consistent (easiest to use IP addresses to stay away from potential DNS challenges)
 
-## To try out: Route sensor data from DevKit to ASA
-Take [this link to try this](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-create-transparent-gateway#route-messages-from-downstream-devices). Should be possible to use exactly this routing info and feed that to ASA from MXChip if we get similar telemetry readings.
-
-- Take the Raspberry Pi first as a leaf device
-- Next step take MXChip
-
