@@ -1,0 +1,51 @@
+﻿with
+transform as (    
+    select
+        time,
+        case when pitch < 180 then pitch else pitch - 360 end as pitch,
+        case when roll < 180 then roll else roll - 360 end as roll
+    from input timestamp by time
+),
+
+aggregation as (
+select 
+    avg(pitch) as pitch, 
+    avg(roll) as roll, 
+    System.Timestamp as time
+from transform
+group by tumblingwindow(s, 1)
+),
+
+udfStep as (
+    select 
+        udf.ASAEdgeTiltJob_Trigonometry_CalculateTilt(pitch, roll) as tilt,
+        pitch,
+        time,
+        roll
+    from aggregation
+),
+
+anomaly as (
+    select 
+       tilt,
+       pitch,
+       roll,
+       time,
+       anomalydetection_spikeanddip(tilt, 99.99, 100, 'spikesanddips') over (limit duration (s, 100)) as anomalyRes
+    from udfStep
+),
+
+finalProjection as ( 
+    select
+        time,
+        tilt,
+        pitch,
+        roll,
+        cast(getrecordpropertyvalue(anomalyRes, 'IsAnomaly') as bigint) as isanomaly,
+        cast(getrecordpropertyvalue(anomalyRes, 'Score') as float) as maxscore
+    from anomaly
+)
+
+select *
+into output
+from finalProjection

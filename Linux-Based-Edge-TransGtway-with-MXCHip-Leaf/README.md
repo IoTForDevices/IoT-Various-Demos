@@ -1,14 +1,19 @@
 # Azure IoT Edge Device (RPi) as Transparent Gateway with connected MXChip Leaf Device
-
 This demo allows you to show how to connect leaf devices to a transparent gateway device using Azure IoT Edge. You can use a Rasberry Pi 3B+ as gateway, but this has also been tested with an Azure IoT Edge device running Ubuntu 18.04 LTS. More backgound information on using an Azure IoT Edge as a Gateway (transparent, protocol translation, identity translation) can be [found here](https://docs.microsoft.com/en-us/azure/iot-edge/iot-edge-as-gateway).
 
 ## Pre-requisites
-
 Here you will find detailed instruction to install [Azure IoT Edge on a RP3 running Raspbian Buster](../Generic-prerequisites/Raspbian-Buster-IoTEdge-RP3/README.md).
-Generic instructions for running this on [Linux (or even a Linux VM) can be found here](https://docs.microsoft.com/en-us/azure/iot-edge/quickstart-linux). 
+Generic instructions for running this on [Linux (or even a Linux VM) can be found here](https://docs.microsoft.com/en-us/azure/iot-edge/quickstart-linux).
+
+**NOTE:** Setting up the demo environment will take time, especially if you have to install an OS on your Edge device as well. You probably need at least two hours to properly setup this demo, prior to delivery during showtime.
+
+## Overview of modules in this demo
+The complete demo consists of this description and a number of software modules that are needed to build the complete demo. Most of the software modules only have to be build once. The are separately described (just click the links for detailed descriptions).
+- ASAEdgeTiltJob: This is a Visual Studio 2019 solution that will create a C# UDF for an Azure Stream Analytics Edge job
+- MXChipTiltMonitor: This is the firmware for an MXChip IoT DevKit that is responsible for generating accelerometer data.
+- TransGtway-EdgeSolution: This is the deployment template to deploy the ASAEdgeTiltJob to an Edge device, configured as transparent gateway. It also contains route information to route telemetry data from a leaf device into the ASAEdgeTiltJob.
 
 ## Generate certificates with Linux
-
 A good description on doing this can be found in [this document](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-create-transparent-gateway#generate-certificates-with-linux) (for my personal use: WSL on work laptop has generated keys in the ~/IoTEdgeCerts folder).
 
 To copy the generated certificates from a development machine to the target device, you can use the following commands from a WSL shell:
@@ -84,10 +89,10 @@ The easiest way to set this up is by using the **Get Started** sample that is pa
 1) Select an existing IoT Hub and create a new device, for instance by typing **Azure IoT Hub: Create Device** in Visual Studio Code's command palette.
 1) Give the device an appropriate name
 1) Right click on the just created device and select **Copy Device Connection String** to copy the connection string to the clipboard.
-1) Put the IoT DevKit into **Configuration Mode** by holding button **A** while pushing and releasing the **Reset** button.
+1) Put the MXChip IoT DevKit into **Configuration Mode** by holding button **A** while pushing and releasing the **Reset** button.
 1) Open the command palette and select **Azure IoT Device Workbench: Configure Device Settings**
 1) Select to an **Input IoT Hub Device Connection String** and paste the contents of the clipboard.
-1) Append teh GatewayHostName property with the hostname or IP address of the gateway device to the end of the connection string. The final string should look like this (taking the same IP address as earlier in this document):
+1) Append the GatewayHostName property with the hostname or IP address of the gateway device to the end of the connection string. The final string should look like this (taking the same IP address as earlier in this document):
 
  ```Hostname=yourIoTHub.azure-devices.net;DeviceId=yourDevice;SharedAccessKey=XXXYYYZZZ=;GatewayHostName=192.168.2.29```
 
@@ -115,9 +120,26 @@ Now you should be good to go. Just boot the MXChip IoT DevKit and make sure that
 At the same time you will see in the IoT Edge logfiles that it passes those messages through.
 ![ScreenShot](Images/MessagePassingThroughEdgeGatway.png)
 
-**Possible Issues:** This should all work smoothly (even with a Edge Device and the leaf device both connected only via WiFi). The only critical things are to make sure that both edgeAgent and edgeHub modules are running on the Edge Device and that the GatewayHostName is consistent (easiest to use IP addresses to stay away from potential DNS challenges)
+**Possible Issues:** This should all work smoothly (even with an Edge Device and the leaf device both connected only via WiFi. although of course with some latency). The only critical things are to make sure that both edgeAgent and edgeHub modules are running on the Edge Device and that the GatewayHostName is consistent (easiest to use IP addresses to stay away from potential DNS challenges and make sure to have all on the same subnet)
 
-## To try out: Route sensor data from DevKit to ASA
+## Anomaly detection with MXChip DevKit as leaf device and local ASA on transparent Azure IoT Edge Gateway
+This is basically the same demo as the [Tilt Monitor using Raspberry Pi with SenseHat](../Tilt-Monitor-RPi-based/README.md). This time accelerometer data is provided by the MXChip DevKit. Here are the step-by-step instructions:
+1) Select an existing IoT Hub and create a new device, for instance by typing **Azure IoT Hub: Create Device** in Visual Studio Code's command palette.
+1) Give the device an appropriate name
+1) Right click on the just created device and select **Copy Device Connection String** to copy the connection string to the clipboard.
+1) Put the MXChip IoT DevKit into **Configuration Mode** by holding button **A** while pushing and releasing the **Reset** button.
+1) Open the command palette and select **Azure IoT Device Workbench: Configure Device Settings**
+1) Select to an **Input IoT Hub Device Connection String** and paste the contents of the clipboard.
+1) Append the GatewayHostName property with the hostname or IP address of the gateway device to the end of the connection string. The final string should look like this (taking the same IP address as earlier in this document):
+
+ ```Hostname=yourIoTHub.azure-devices.net;DeviceId=yourDevice;SharedAccessKey=XXXYYYZZZ=;GatewayHostName=192.168.2.29```
+
+1) Press enter to set this into the MXChip IoT DevKit
+1) Install the MXChipTiltMonitor firmware on the MXChip DevKit. The firmware can be found in the Repo.
+
+The MXChip DevKit IoT should now connect to the specified IoT Hub through your transparent gateway. Since you want to run anomaly detection locally on the gateway, you need to make sure to provide routing information to send telemetry data to the ASA job that will be running on your gateway device.
+
+
 Take [this link to try this](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-create-transparent-gateway#route-messages-from-downstream-devices). Should be possible to use exactly this routing info and feed that to ASA from MXChip if we get similar telemetry readings.
 
 - Take the Raspberry Pi first as a leaf device

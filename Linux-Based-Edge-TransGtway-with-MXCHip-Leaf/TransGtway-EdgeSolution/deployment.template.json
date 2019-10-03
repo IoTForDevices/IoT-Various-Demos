@@ -1,0 +1,81 @@
+{
+  "$schema-template": "2.0.0",
+  "modulesContent": {
+    "$edgeAgent": {
+      "properties.desired": {
+        "schemaVersion": "1.0",
+        "runtime": {
+          "type": "docker",
+          "settings": {
+            "minDockerVersion": "v1.25",
+            "loggingOptions": "",
+            "registryCredentials": {}
+          }
+        },
+        "systemModules": {
+          "edgeAgent": {
+            "type": "docker",
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge-agent:1.0",
+              "createOptions": {}
+            }
+          },
+          "edgeHub": {
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge-hub:1.0",
+              "createOptions": {
+                "HostConfig": {
+                  "PortBindings": {
+                    "5671/tcp": [{"HostPort": "5671"}],
+                    "8883/tcp": [{"HostPort": "8883"}],
+                    "443/tcp": [{"HostPort": "443"}]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "modules": {
+          "asa-edge-tilt-processor": {
+            "settings": {
+              "image": "mcr.microsoft.com/azure-stream-analytics/azureiotedge:1.0.4",
+              "createOptions": ""
+            },
+            "type": "docker",
+            "version": "1.0",
+            "env": {
+              "PlanId": {
+              "value": "stream-analytics-on-iot-edge"
+              }
+            },
+            "status": "running",
+            "restartPolicy": "always"
+          }
+        }
+      }
+    },
+    "$edgeHub": {
+      "properties.desired": {
+        "schemaVersion": "1.0",
+        "routes": {
+          "sensorToAsa": "FROM /messages/* WHERE NOT IS_DEFINED($connectionModuleId) INTO BrokeredEndpoint(\"/modules/asa-edge-tilt-processor/inputs/Input\")",
+          "asaToCloud": "FROM /messages/modules/asa-edge-tilt-processor/outputs/Output INTO $upstream"
+        },
+        "storeAndForwardConfiguration": {
+          "timeToLiveSecs": 7200
+        }
+      }
+    },
+    "asa-edge-tilt-processor": {
+      "properties.desired": {
+          "ASAJobInfo": "https://airoadshowstorage.blob.core.windows.net/asa-edge-35c1eb97-b089-4582-8dc9-21eefadf5019/ASAEdgeJobs/35c1eb97-b089-4582-8dc9-21eefadf5019/339f681b-f36e-4ae0-870e-88503c225c26/ASAEdgeJobDefinition.zip?sv=2018-03-28&sr=b&sig=HsicXUZLnk1epusch4EkGTZvIaxjlNZT7kR3SXqQlIA%3D&st=2019-10-03T09%3A22%3A25Z&se=2022-10-03T09%3A32%3A25Z&sp=r",
+          "ASAJobResourceId": "/subscriptions/acc6ca07-c346-4621-be07-3091f13f1280/resourceGroups/Arrow-AI-Roadshow-RG/providers/Microsoft.StreamAnalytics/streamingjobs/asa-edge-tilt-processor",
+          "ASAJobEtag": "9a3efc28-0972-4767-a621-b96cb0a727a3",
+          "PublishTimestamp": "10/3/2019 9:32:25 AM"
+      }
+    }
+  }
+}
