@@ -4,10 +4,13 @@
             "name": "Win32",
             "includePath": [
                 "C:\\Users\\mstruys\\AppData\\Local\\Arduino15\\packages\\AZ3166\\tools\\**",
-                "C:\\Users\\mstruys\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.6.2\\**"
+                "C:\\Users\\mstruys\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.6.2\\**",
+                "C:\\Users\\Maarten\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.6.3\\**",
+                "C:\\Users\\Maarten\\AppData\\Local\\Arduino15\\packages\\AZ3166\\tools\\**"
             ],
             "forcedInclude": [
-                "C:\\Users\\mstruys\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.6.2\\cores\\arduino\\Arduino.h"
+                "C:\\Users\\mstruys\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.6.2\\cores\\arduino\\Arduino.h",
+                "C:\\Users\\Maarten\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.6.3\\cores\\arduino\\Arduino.h"
             ],
             "intelliSenseMode": "msvc-x64",
             "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.22.27905/bin/Hostx64/x64/cl.exe",

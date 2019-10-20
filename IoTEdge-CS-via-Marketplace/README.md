@@ -29,7 +29,7 @@ sudo systemctl restart docker
 sudo systemctl restart iotedge
 ```
 
-## Step-by-step instructions
+## Step-by-step instructions (Sentiment Analysis Cognitive Service)
 1) Create a new Azure IoT Edge runtime on an Edge Device (virtual or physical) or use an existing one.
 
 	**Note:** This step is not necessary if you use the 'Virtual device running Linux' or 'Virtual device running Windows Server' pre-requisites, since they already install the Azure IoT Edge runtime for you.

@@ -8,12 +8,12 @@ transform as (
 ),
 
 aggregation as (
-select 
-    avg(pitch) as pitch, 
-    avg(roll) as roll, 
-    System.Timestamp as time
-from transform
-group by tumblingwindow(s, 1)
+    select 
+        avg(pitch) as pitch, 
+        avg(roll) as roll, 
+        System.Timestamp as time
+    from transform
+    group by tumblingwindow(s, 1)
 ),
 
 udfStep as (

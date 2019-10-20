@@ -1,0 +1,1 @@
+# Transparent Gateway Edge Solution Explained

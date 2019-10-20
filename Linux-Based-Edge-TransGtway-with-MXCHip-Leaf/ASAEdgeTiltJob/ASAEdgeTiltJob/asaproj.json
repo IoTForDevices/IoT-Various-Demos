@@ -1,0 +1,5 @@
+{
+    "name": "ASAEdgeTiltJob",
+    "startFile": "Script.asaql",
+    "configurations": []
+}

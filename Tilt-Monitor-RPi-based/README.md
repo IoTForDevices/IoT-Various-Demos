@@ -8,18 +8,15 @@ Some background on Anomaly Detection using ASA can be found in [this document](h
 
 Here you will find detailed instruction to install [Azure IoT Edge on a RP3 running Raspbian Buster](../Generic-prerequisites/Raspbian-Buster-IoTEdge-RP3/README.md).
 
-TODO - Description + Source code for python project on pi
-TODO - Description + Source code (code behind for ASA) + ASA Query
-TODO - Description + Source code for ASA Power BI
-TODO - Link to Power BI
-TODO - All routing information needs to be fixed
+## High level demo description
+This is a readily available demo with a sensor hat (contains LEDs) on a raspberry Pi. It uses pre-deployed A/D ML functions to ‘paint’ the hat in Red if there is vibration detected. The input to the on-the-edge stream processing uses the accelerometer input.
 
+The demo also showcases the C# UDF capability in Stream Analytics. We ingress x,y,z coordinates and make a C# UDF call on the edge (beat that!!) to compute tilt using complex math function library in C# and run anomaly detection on that computed Tilt.
 
+![Architecture](./Images/Architecture.jpg)
 
-FROM /messages/* WHERE NOT IS_DEFINED($connectionModuleId) INTO $upstream
+Some background of calculating tilt can be found in the following image.
 
+![Background](./Images/TiltTheory.jpg)
 
-    "alertsToCloud": "FROM /messages/modules/avg-temp-asa-job/* INTO $upstream",
-    "telemetryToAsa": "FROM /messages/* WHERE NOT IS_DEFINED($connectionModuleId) INTO BrokeredEndpoint(\"/modules/avg-temp-asa-job/inputs/temperature\")"
-
-
+For now, see [this description](https://dev.azure.com/mstruys-nl/_git/PiTiltMonitor?path=%2FREADME.md&version=GBmaster) to build the entire project. This repository (on which you are reading the README<span></span>.md right now) is not complete with all projects, so they are currently pulled from a dev<span></span>.azure.com repository.
