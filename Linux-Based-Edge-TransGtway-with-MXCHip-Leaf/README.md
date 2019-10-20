@@ -154,8 +154,6 @@ For now, just take the pre-defined TiltDemoPowerBI-ASA job in the Arrow-AI-Roads
 
 >To experiment further with this to increase accuracy, use the following:
 
-<<<<<<< HEAD
-=======
 >Take [this link to try this](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-create-transparent-gateway#route-messages-from-downstream-devices). Should be possible to use exactly this routing info and feed that to ASA from MXChip if we get similar telemetry readings.
 
 >- Take the Raspberry Pi first as a leaf device
