@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6BB4BA0B-D797-4009-AF24-85ECC118325D}") = "ASAEdgeTiltJob", "ASAEdgeTiltJob\ASAEdgeTiltJob.edgeproj", "{A5435C64-B09D-4ADF-B038-4A9F3F9D7396}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5435C64-B09D-4ADF-B038-4A9F3F9D7396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5435C64-B09D-4ADF-B038-4A9F3F9D7396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5435C64-B09D-4ADF-B038-4A9F3F9D7396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5435C64-B09D-4ADF-B038-4A9F3F9D7396}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A7BA8C79-F2A4-4D8D-9DE6-EFA481D8BCD3}
+	EndGlobalSection
+EndGlobal

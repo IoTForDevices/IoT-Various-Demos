@@ -58,7 +58,7 @@ void SensorInit()
     acc_gyro = new LSM6DSLSensor(*i2c, D4, D5);
     acc_gyro->init(NULL);
     acc_gyro->enableAccelerator();
-    acc_gyro->enableGyroscope();
+    //acc_gyro->enableGyroscope();
 }
 
 bool readMessage(char *payLoadBuffer)

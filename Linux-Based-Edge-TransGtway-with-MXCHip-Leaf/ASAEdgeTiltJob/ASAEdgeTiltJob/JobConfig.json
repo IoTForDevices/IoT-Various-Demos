@@ -1,0 +1,19 @@
+﻿{
+  "DataLocale": "en-US",
+  "OutputErrorPolicy": "Drop",
+  "EventsLateArrivalMaxDelayInSeconds": 5,
+  "EventsOutOfOrderMaxDelayInSeconds": 0,
+  "EventsOutOfOrderPolicy": "Adjust",
+  "StreamingUnits": 3,
+  "CompatibilityLevel": "1.0",
+  "UseSystemAssignedIdentity": false,
+  "GlobalStorageAccountName": "airoadshowstorage",
+  "GlobalStorageAccountKey": null,
+  "AccountName": "airoadshowstorage",
+  "AccountKey": null,
+  "ContainerName": "avg-temp-asa-job-container",
+  "Path": "ASAEdgeTiltJobCustomCode.zip",
+  "UploadFromLocal": true,
+  "DataSourceCredentialDomain": "0ce90894-e73a-4bbf-adb0-00daa93c4bdb.StreamAnalyticsCredential",
+  "ScriptType": "JobConfig"
+}
