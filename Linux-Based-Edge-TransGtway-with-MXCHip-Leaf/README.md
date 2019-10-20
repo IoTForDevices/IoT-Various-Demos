@@ -150,8 +150,6 @@ The MXChip DevKit IoT should now connect to the specified IoT Hub through your t
 ### Start the ASA Job to send anomaly data to PowerBI
 For now, just take the pre-defined TiltDemoPowerBI-ASA job in the Arrow-AI-Roadshow-RG. At a later moment, we will add a way to create the job from within Visual Studio Code (currently the ASA plugin doesn't support PowerBI as output).
 
-
-
 >To experiment further with this to increase accuracy, use the following:
 
 >Take [this link to try this](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-create-transparent-gateway#route-messages-from-downstream-devices). Should be possible to use exactly this routing info and feed that to ASA from MXChip if we get similar telemetry readings.
