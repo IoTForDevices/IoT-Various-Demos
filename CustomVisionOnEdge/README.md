@@ -26,7 +26,7 @@ To run this demo, you need the following devevelopment tools installed on your l
 Since initially this is a time consuming job, you will build, install and test the necessary modules prior to showing them in action.
 
 These steps need to be executed on your development machine:
-1) Clone this sample (if you don't want to clone the sample to your local machine, you can clone it to your target device and use VS Code remote tools to build the sample on your target device). Setting up VS Code for remote development is beyond the scope of this manual, but [more information can be found here](https://code.visualstudio.com/docs/remote/remote-overview).
+1) Clone [this sample](https://github.com/Azure-Samples/Custom-vision-service-iot-edge-raspberry-pi/tree/master/) (if you don't want to clone the sample to your local machine, you can clone it to your target device and use VS Code remote tools to build the sample on your target device). Setting up VS Code for remote development is beyond the scope of this manual, but [more information can be found here](https://code.visualstudio.com/docs/remote/remote-overview).
 2) Update the .env file with the values for your container registry and make sure that your docker engine has access to it
 3) Build the entire solution by opening the control palette (Ctrl+Shift+P), select Build and push IoT Edge Solution (this can take a while...especially to build numpy and pillow...) and select the deployment.test-amd64.template.json manifest file (it includes a test video file to simulate a camera)
 1) Deploy the solution to your device by right-clicking on the config/deployment.json file, select Create Deployment for Single device and choose your targeted device
