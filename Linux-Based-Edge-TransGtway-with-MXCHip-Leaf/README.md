@@ -7,6 +7,8 @@ Generic instructions for running this on [Linux (or even a Linux VM) can be foun
 
 **NOTE:** Setting up the demo environment will take time, especially if you have to install an OS on your Edge device as well. You probably need at least two hours to properly setup this demo, prior to delivery during showtime.
 
+**NOTE about generated test certificates**: Test certificates are only valid for one month and should not be used in production environments. To easily generate and install certificates on an Edge device, [supporting scripts](./SupportingScripts/README.md) are available.
+
 ## Overview of modules in this demo
 The complete demo consists of this description and a number of software modules that are needed to build the complete demo. Most of the software modules only have to be build once. The are separately described (just click the links for detailed descriptions).
 - [ASAEdgeTiltJob](./ASAEdgeTiltJob/README.md): This is a Visual Studio 2019 solution that will create a C# UDF for an Azure Stream Analytics Edge job
