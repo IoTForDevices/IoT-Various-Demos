@@ -37,3 +37,5 @@ Device/.vscode/c_cpp_properties.json
 Device/.vscode/arduino.json
 Device/.vscode/ipch
 
+# Certificate file for edgeCert (changes frequently)
+Device/edge-cert.h

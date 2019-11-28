@@ -5,7 +5,9 @@
 IOTEDGE_REPO_DIR=~/Source/Repo/iotedge/tools/CACertificates/
 WRKDIR=~/IoTEdgeCerts/
 CA_CERTIFICATE_NAME="MyEdgeDeviceCA"
-EDGE_DEVICE=maarten@192.168.2.19
+# EDGE_DEVICE=maarten@maarten-up-apl01
+EDGE_DEVICE=maarten@azure-iot-edge-vm-on-ubuntu-mst01
+
 CERT_DIR=~/IoTEdgeCerts
 
 if [ -d $WRKDIR ]

@@ -6,10 +6,7 @@
 #include "utility.h"
 #include "SystemTickCounter.h"
 
-static const char edgeCert [] =
-"-----BEGIN CERTIFICATE-----\r\n"
-"Insert certificate here (<CERTDIR>/certs/azure-iot-test-only.root.ca.cert.pem)"
-"-----END CERTIFICATE-----\r\n";
+#include "edge-cert.h"
 
 static bool hasWifi = false;
 int messageCount = 1;
