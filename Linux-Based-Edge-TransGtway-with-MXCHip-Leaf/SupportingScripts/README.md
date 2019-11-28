@@ -5,3 +5,9 @@ This script can be used to generate test certificates to be used to securily con
 **Prerequisites to run the script:**
 The development machine and the target device need to be able to communicate over ssh using key-based authentication. This actually allows the scp command to execute without asking passwords each time it is executed. [This document on OpenSSH](https://help.ubuntu.com/community/SSH/OpenSSH/Keys) gives more details on how to set this up.
 
+```
+usage: ./create-test-certs.sh [OPTIONS]
+
+-c, --certificate-name <disired-certificate-name>
+-r, --remote-device <user@device-uri>
+```
