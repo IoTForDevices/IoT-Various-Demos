@@ -1,0 +1,5 @@
+# Building an IoT Plug and Play enabled MXChip device
+This demo is useful for device builders that want to support IoT Plug and Play to extend their potential customer base and to allow IoT Solution developers to concentrate on building a solution rather then connecting individual devices to an IoT Hub / IoT Central application.
+## Prerequisites
+In this demo we focus on developing on a laptop that runs Windows 10, version 1909 or later. In order to develop for MXChip devices, you must have the following tools installed:
+- Follow [these steps](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started#prepare-the-development-environment) to setup the Arduino Development Environment and Visual Studio Code. We will develop using Visual Studio Code, but the Arduino IDE is needed to provides the necessary toolchain for compiling and uploading Arduino code. It is important to install the Arduino IDE with the **Windows Installer**. Do not install the IDE from the App Store, because that version cannot integrate with Visual Studio Code.
