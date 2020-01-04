@@ -1,0 +1,14 @@
+{
+    "codeGenExecutionItems": [
+        {
+            "outputDirectory": "c:\\Source\\Repo\\IoT-Various-Demos\\sensorbox_app",
+            "capabilityModelFilePath": "c:\\Source\\Repo\\IoT-Various-Demos\\Iot-PnP-Demos\\Dev-Builder-MXChip\\devicemodel\\SensorboxModel.capabilitymodel.json",
+            "interfaceDirecoty": "c:\\Source\\Repo\\IoT-Various-Demos",
+            "projectName": "sensorbox_app",
+            "languageLabel": "ANSI C",
+            "codeGenProjectType": "IoTDevKit",
+            "deviceSdkReferenceType": "DevKitSDK",
+            "deviceConnectionType": "ConnectionString"
+        }
+    ]
+}
