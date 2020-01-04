@@ -5,5 +5,5 @@ The following demo's are currently available:
 
 Demo | Description
 ---|---
-Adding-Devices-Automatically | Demo for IoT Solution Builders to add a device to a solution without defining it prior to connecting it
-[Dev-Builder-MXChip](Dev-Builder-MXChip/README.md) | Demo to build an IoT Plug and Play capable device using MXChip hardware
+[Adding-Devices-Automatically](Adding-Devices-Automatically/README.md) | Demo for IoT Solution Builders to add a device to a solution without defining it prior to connecting it
+[Dev-Builder-MXChip](Dev-Builder-MXChip/README.md) | Demo to build an IoT Plug and Play capable device using MXChip hardware that connects to an IoT Hub

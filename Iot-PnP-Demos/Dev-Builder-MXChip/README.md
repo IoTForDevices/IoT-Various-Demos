@@ -23,9 +23,9 @@ To build an IoT Plug and Play version of AZ3166 firmware, make sure to select th
    - Create an interface to define a Command (.e.g. Toggle LED)
 1) Publish your model ([Guidance](https://docs.microsoft.com/en-us/azure/iot-pnp/tutorial-pnp-visual-studio-code#publish-the-model)) 
 1) Generate code for the Capability Model you just created ([Guidance](https://docs.microsoft.com/en-us/azure/iot-pnp/tutorial-pnp-visual-studio-code#generate-code)). Don't forget to update the generate code to do something meaningful with the device. You don't have to provide low level MXChip code, but you can call functions that are defined in header file **IoT_DevKit_HW.h**. 
-1) Test if you can connect your device to an IoT Hub. For this exercise it is OK to hard code the device connection string.
+1) Test if you can connect your device to an IoT Hub. For this exercise it is OK to hard code the device connection string. However, a better solution is to use the IoT Workbench to set the connection string in the HSM of the MXChip device.
 
-**About Connection Strings:** In a real solution, the connection string should be provisioned to the device, preferably in an automated way. For this workshop, you can hard-code the connection string in source code (name of the .ino file). 
+**About Connection Strings:** In a real solution, the connection string should be provisioned to the device, preferably in an automated way.
 
 To verify the behavior of your device, you can for instance use [Device Explorer](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer) to verify that telemetry data is send to the device, to see the Device Twin with the property you defined and you can execute the command you defined from inside Device Explorer as well.
 
