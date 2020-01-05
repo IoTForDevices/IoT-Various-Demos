@@ -21,13 +21,13 @@ To build an IoT Plug and Play version of AZ3166 firmware, make sure to select th
    - Create an interface for some Telemetry Data (e.g. Temperature and Humidity)
    - Create an interface to define a Property (e.g. Measurement Interval)
    - Create an interface to define a Command (.e.g. Toggle LED)
-1) Publish your model ([Guidance](https://docs.microsoft.com/en-us/azure/iot-pnp/tutorial-pnp-visual-studio-code#publish-the-model)) 
+1) Publish your model ([Guidance](https://docs.microsoft.com/en-us/azure/iot-pnp/tutorial-pnp-visual-studio-code#publish-the-model)). This step is important if you want to make use of the Azure IoT Explorer to verify behavior of your device. 
 1) Generate code for the Capability Model you just created ([Guidance](https://docs.microsoft.com/en-us/azure/iot-pnp/tutorial-pnp-visual-studio-code#generate-code)). Don't forget to update the generate code to do something meaningful with the device. You don't have to provide low level MXChip code, but you can call functions that are defined in header file **IoT_DevKit_HW.h**. 
 1) Test if you can connect your device to an IoT Hub. For this exercise it is OK to hard code the device connection string. However, a better solution is to use the IoT Workbench to set the connection string in the HSM of the MXChip device.
 
 **About Connection Strings:** In a real solution, the connection string should be provisioned to the device, preferably in an automated way.
 
-To verify the behavior of your device, you can for instance use [Device Explorer](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer) to verify that telemetry data is send to the device, to see the Device Twin with the property you defined and you can execute the command you defined from inside Device Explorer as well.
+To verify the behavior of your device, you can for instance use [Device Explorer](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer) to verify that telemetry data is send to the device, to see the Device Twin with the property you defined and you can execute the command you defined from inside Device Explorer as well. If you have published your Device Capability Model earlier, it is easier to make use of the Azure IoT Explorer to verify the behavior of your device.
 
 Because we are making use of generated device code, be careful to modify it, because each time you generate the device code, your modifications will be lost. Therefor it is important to think good about the interfaces you expose for your device. Typically, you don't have to regenerate device code when you don't modify your interfaces. When you modify device code, try to do so in well defined locations in the generated source files and always keep store a backup of your modified code.
 
@@ -55,4 +55,4 @@ void pnp_device_run()
 }
 ```
 
-Since we defined a writeable property interval, you now can modify this generated source code and make use of the defined propety to be able to change the interval between two telemetry readings.
+Since we defined a writeable property interval, you now can modify this generated source code and make use of the defined propety to be able to change the interval between two telemetry readings. You can change the property from inside the [Azure IoT Explorer](https://github.com/Azure/azure-iot-explorer/releases).
