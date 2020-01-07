@@ -1,0 +1,16 @@
+{
+  "@id": "urn:DotNETForDevices:SensorboxModel:1",
+  "@type": "CapabilityModel",
+  "displayName": "Environmental Sensorbox Model",
+  "implements": [
+    {
+      "schema": "urn:DotNETForDevices:EnvironmentalSensor:1",
+      "name": "environmentalSensor"
+    },
+    {
+      "schema": "urn:azureiot:DeviceManagement:DeviceInformation:1",
+      "name": "deviceInfo"
+    }
+  ],
+  "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
+}

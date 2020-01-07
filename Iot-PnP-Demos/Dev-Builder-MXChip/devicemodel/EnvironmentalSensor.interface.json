@@ -1,0 +1,52 @@
+{
+  "@id": "urn:DotNETForDevices:EnvironmentalSensor:1",
+  "@type": "Interface",
+  "displayName": "Environmental Sensor",
+  "description": "Provides functionality to report temperature and humidity. Provides telemetry, commands and read-write properties.",
+  "comment": "Requires temperature and humidity sensors.",
+  "contents": [
+    {
+      "@type": "Property",
+      "displayName": "Measurement Interval",
+      "description": "The interal between two sensor measurements.",
+      "name": "interval",
+      "schema": "integer",
+      "writable": true
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Temperature"
+      ],
+      "description": "Current temperature on the device.",
+      "displayName": "Temperature",
+      "name": "temperature",
+      "schema": "double",
+      "unit": "Units/Temperature/celsius",
+      "displayUnit": "°C"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "SemanticType/Humidity"
+      ],
+      "description": "Current humidity on the device.",
+      "displayName": "Humidity",
+      "name": "humidity",
+      "schema": "double",
+      "unit": "Units/Humidity/percent",
+      "displayUnit": "%"
+    },
+    {
+      "@type": "Command",
+      "description": "This command will toggle the LED.",
+      "name": "toggle",
+      "commandType": "synchronous",
+      "response": {
+        "name": "toggle",
+        "schema": "string"
+      }
+    }
+  ],
+  "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
+}

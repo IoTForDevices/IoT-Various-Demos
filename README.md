@@ -13,3 +13,4 @@ A number of different step-by-step demo instructions for Azure IoT based present
 
 [Custom Vision on Azure IoT Edge](CustomVisionOnEdge/README.md) demo
 
+[IoT Plug and Play](IoT-PnP-Demos/README.md) demos
