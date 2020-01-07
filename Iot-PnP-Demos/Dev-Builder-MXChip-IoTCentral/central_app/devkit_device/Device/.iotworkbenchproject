@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "path": "Device"
+        }
+    ],
+    "settings": {
+        "IoTWorkbench.BoardId": "devkit",
+        "IoTWorkbench.DevicePath": "Device"
+    },
+    "ProjectHostType": "Workspace",
+    "version": "1.0.0"
+}
