@@ -54,7 +54,7 @@ Currently, Moby doesn't install on Raspbian Buster, so instead we are going to u
 ```
 4) Install the IoT Edge Runtime:
 ```Bash
-	curl https://packages.microsoft.com/config/debian/stretch/multiarchprod.list > ./microsoft-prod.list
+	curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod.list
 	sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
 	curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > ./microsoft.gpg
 	sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/
